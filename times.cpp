@@ -1,28 +1,17 @@
 #include "times.h"
-
-
-
 times::	times (std::vector<Jogador*> Jogadores, tecnico* Profexor, std::string nome, bool usuario){
-
 	this-> _escudo=nome;
     this->_Elenco= Jogadores;
     this->_time_usuario=usuario;
     this->Gols=0;
 	this-> _Tecnico=Profexor;
-
 }
 
-
-
 times::~times () {}
-
 
 std::string times:: get_escudo(){
 		return(this->_escudo);
 }
-
-
-
 void times:: get_elenco() { //Imprime o time e seus jogadores, alem do estilo adotado pelo tecnico
 
 int i;
@@ -32,8 +21,6 @@ std::cout<<"Elenco:"<<std::endl;
 std::cout<<std::endl;
 
 for(i=0;i<int (_Elenco.size());i++){
-
-
 	std::cout<<_Elenco[i]->get_nome()<<" "<<std::endl;
 	std::cout<<"Posicao:"<<" "<<_Elenco[i]->get_posicao()<<std::endl;
 	if(_Elenco[i]->get_estrela()==true)
@@ -46,11 +33,7 @@ for(i=0;i<int (_Elenco.size());i++){
 
 std::cout<<"Treinador:"<<_Tecnico->get_nome()<< " ";
 std::cout<<" Estilo do treinador:"<<_Tecnico->get_tipo()<<std::endl;
-
-
-
 }
-
 
 float times::atacando() {//retorna for�a de ataque do time, que � a media dos atributos dos jogadores com alguns incrementos como: estilo do treinador, destaques individuais(estrela)
 
@@ -77,7 +60,7 @@ for(i=0;i<int(_Elenco.size());i++){
 }
 ataque/=(_Elenco.size()-k );
 
-ataque+=_Tecnico->get_ataque();
+ataque+=_Tecnico->get_ForcaAtaque();
 
 return(ataque);
 }
@@ -101,20 +84,14 @@ for(i=0;i<int(_Elenco.size());i++){
 }
 defesa/=_Elenco.size();
 
-defesa+=_Tecnico->get_defesa();
+defesa+=_Tecnico->get_ForcaDefesa();
 
 return(defesa);
-
-
 }
-
 
 bool times:: get_user(){ // fun��o que retorna um variavel booleana, se for true indica que o time em quest�o esta sendo usado pelo usuario, caso contrario � false
 
 	return(_time_usuario);
-
-
-
 }
 
 void times::set_user(bool w) { // fun��o que retorna um variavel booleana, se for true indica que o time em quest�o esta sendo usado pelo usuario, caso contrario � false
@@ -137,7 +114,6 @@ int times:: get_Gols(){
 return (this->Gols);
 }
 
-
 void times:: Change_manager() {
 
     std::string novo_tipo;
@@ -146,15 +122,6 @@ void times:: Change_manager() {
     novo_tipo=this->_Tecnico->ValidaTecnico();
 
     this->_Tecnico= new tecnico (novo_tipo,nome);
-
-
-
-
-
-
-
-
-
 }
 
 
