@@ -14,9 +14,9 @@
          virtual ~tecnico();
          std::string get_tipo();
          std::string get_Nome();
-         int get_ataque();
-         int get_defesa();
-         std::string ValidaTecnico();
+         float get_ForcaAtaque();
+         float get_ForcaDefesa();
+         static std::string ValidaTecnico();
      private:
          std::string _tecnico;
          std::string _nome;

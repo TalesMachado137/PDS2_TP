@@ -93,17 +93,13 @@ std::cout<<endl;
 std::cout<<std::endl<<"Para continuar de ENTER "<<std::endl;
 
 while(int(go)!=VALOR_DE_ENTER) {
-
        go=getch();
-
        if(int(go)==VALOR_DE_ENTER)
            break;
-
         else
         std::cout<<"Comando invalido! Digite novamente! "<<std::endl<<std::endl;
 }
 if(A->get_Gols()>B->get_Gols()) {
-
         winner=A;
     } else {
         winner=B;
@@ -111,8 +107,6 @@ if(A->get_Gols()>B->get_Gols()) {
     winner->Zerar_gol();
 return (winner);
 }
-
-
 
 times* Partida:: partida (times*A, times*B){
 
@@ -142,16 +136,14 @@ for(i=0;i < (NUMERO_DE_TEMPOS);i++){
     dif2=ataque2-defesa1;
 
     if(dif1>LIMIAR_DE_ATAQUE_MIN&&dif1<=LIMIAR_DE_ATAQUE_MAX) {
-        float aux1 = (rand()%5);
-        A->Fez_gol(aux1);
+        A->Fez_gol(rand()%5);
     }else if (dif1>LIMIAR_DE_ATAQUE_MAX) {
-        A->Fez_gol(int(rand() % 3));
+        A->Fez_gol(rand() % 3);
     }
       if(dif2>LIMIAR_DE_ATAQUE_MIN&&dif2<=LIMIAR_DE_ATAQUE_MAX){
           float aux1 = (rand()%5);
           B->Fez_gol(aux1);
       }
-
       else if(dif2>LIMIAR_DE_ATAQUE_MAX)
          B->Fez_gol(int(rand()%3));
 }
@@ -167,29 +159,21 @@ if(A->get_Gols()==B->get_Gols() ) {
     std::cout<<std::endl;
     std::cout<<std::endl<<"Para continuar de ENTER "<<std::endl;
 while(int(go)!=VALOR_DE_ENTER) {
-
        go=getch();
-
        if(int(go)==VALOR_DE_ENTER)
            break;
-
         else
         std::cout<<"Comando invalido! Digite novamente! "<<std::endl<<std::endl;
         }
 if(A->get_Gols()>B->get_Gols()) {
-
         winner=A;
     } else {
-
        winner=B;
     }
-
     winner->Zerar_gol();
 }
     return (winner);
 }
-
-
 
 times* Partida:: partida_usuario (times*A, times*B) {
 
@@ -230,12 +214,12 @@ for(i=0;i<NUMERO_DE_TEMPOS;i++){
         dif2=ataque2-defesa1;
 
       if(dif1>LIMIAR_DE_ATAQUE_MIN&&dif1<=LIMIAR_DE_ATAQUE_MAX)
-        A->Fez_gol(((rand()%5)*0.25));
+        A->Fez_gol(rand()%5);
       else if (dif1>LIMIAR_DE_ATAQUE_MAX)
         A->Fez_gol((rand()%3));
 
       if(dif2>LIMIAR_DE_ATAQUE_MIN&&dif2<=LIMIAR_DE_ATAQUE_MAX)
-       B->Fez_gol(((rand()%5)*0.25));
+       B->Fez_gol((rand()%5));
       else if(dif2>LIMIAR_DE_ATAQUE_MAX)
          B->Fez_gol((rand()%3));
 
@@ -295,22 +279,16 @@ winner=this->prorrogacao(A,B);
     std::cout<<"Resultado da Partida:"<<std::endl;
     std::cout<<endl;
 
-
     std::cout<<A->get_escudo()<<" "<<A->get_Gols() << " X ";
     std::cout<<B->get_Gols() << " " << B->get_escudo()<<std::endl;
     std::cout<<endl;
 
-
     if(A->get_Gols()>B->get_Gols()) {
-
         winner=A;
     } else {
-
        winner=B;
     }
-
     winner->Zerar_gol(); }
-
     return (winner); }
 
     void Partida::new_style(){

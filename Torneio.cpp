@@ -95,6 +95,7 @@ int jogo=1;
 const int VARIACAO_MIN=5;
 const int LIMITE_DE_SORTEIO=15;
 
+srand( (unsigned)time(NULL) );
 
  if(Fase.size()==2) {
     std::cout<<"A grande final sera disputada entre:"<<std::endl;
@@ -114,6 +115,7 @@ else {
         std::random_shuffle(Fase.begin(), Fase.end());
     else if(t%7==0)
         std::random_shuffle(Fase.begin(), Fase.end());
+    else std::random_shuffle(Fase.begin(), Fase.end());
 
     std::cout<<" O sorteio foi realizado, os confrontos sao: "<<std::endl;
     for(k=0;k<int(Fase.size());k++) {

@@ -11,6 +11,8 @@ class pessoa
         pessoa(std::string nomezao, bool estrela);
         std::string get_nome();
         bool get_estrela();
+        virtual float get_ForcaAtaque() = 0;
+        virtual float get_ForcaDefesa() = 0;
 };
 
 #endif //PESSOA.H

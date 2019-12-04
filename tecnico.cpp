@@ -55,10 +55,10 @@ std::string tecnico::get_Nome(){
     return _nome;
 }
 
-int tecnico::get_ataque(){
+float tecnico::get_ForcaAtaque(){
     return this->_ataque;
 }
 
-int tecnico::get_defesa(){
+float tecnico::get_ForcaDefesa(){
     return this->_defesa;
 }
